@@ -98,3 +98,9 @@ heap.c:50:3: error: implicit declaration of function ‘prinf’; did you mean �
 cc1: all warnings being treated as errors
 Compilation failed
 d9cc613
+Fri 12 May 2023 01:04:40 PM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  2|2
+total_score: 20/70
+e17268c
