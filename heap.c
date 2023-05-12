@@ -34,6 +34,11 @@ void heap_push(Heap* pq, void* data, int priority){
   pq->size++;
   pq->heapArray[pq->size].data = data;
   pq->heapArray[pq->size].priority = priority;
+  for(int j = 0; j<pq->size; j++)
+    {
+      printf(" (%i) ",pq->heapArray[j].priority);
+    }
+  printf("\n");
   heapElem aux = pq->heapArray[pq->size];
   int i = pq->size;
   while(i != 0 && pq->heapArray[i].priority > pq->heapArray[(i-pq->capac)/2].priority)
@@ -43,11 +48,7 @@ void heap_push(Heap* pq, void* data, int priority){
       pq->heapArray[(i-pq->capac)/2] = aux;
       i = (i-pq->capac)/2;
     }
-  for(int j = 0; j<pq->size; j++)
-    {
-      printf(" (%i) ",pq->heapArray[j].priority);
-    }
-  printf("\n");
+
 }
 
 
