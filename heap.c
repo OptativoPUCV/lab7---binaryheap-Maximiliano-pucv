@@ -52,7 +52,13 @@ void heap_pop(Heap* pq){
   pq->heapArray[pq->size-1] = pq->heapArray[0];
   pq->heapArray[0] = aux;
   int i = pq->heapArray[0].priority;
-  while(i!=)
+  while(i != pq->size-1)
+    {
+      if((i*2)+1 >pq->size && (i*2)+2 > pq->size)
+      {
+        break;
+      }
+    }
 
 }
 
