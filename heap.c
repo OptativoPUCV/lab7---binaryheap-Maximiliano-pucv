@@ -54,7 +54,7 @@ void heap_pop(Heap* pq){
   int i = 0;
   pq->size--;
   
-  while(i != pq->size-1)
+  while(i < pq->size-1)
     {
       //caso 1
       if(pq->heapArray[(i*2)+1].data == NULL && pq->heapArray[(i*2)+2].data == NULL)
