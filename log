@@ -164,3 +164,13 @@ Fri 12 May 2023 01:14:13 PM UTC:
  tests:  7|1
 total_score: 45/70
 5e8c45d
+Fri 12 May 2023 01:28:09 PM UTC: 
+ heap.c | 11 +++++------
+ 1 file changed, 5 insertions(+), 6 deletions(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_pop’:
+heap.c:55:12: error: expected expression before ‘)’ token
+   55 |   while(i!=)
+      |            ^
+Compilation failed
+1e9c89f
