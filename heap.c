@@ -51,14 +51,85 @@ void heap_pop(Heap* pq){
   heapElem aux = pq->heapArray[pq->size-1];
   pq->heapArray[pq->size-1] = pq->heapArray[0];
   pq->heapArray[0] = aux;
-  int i = pq->heapArray[0].priority;
+  int i = 0;
+
   while(i != pq->size-1)
     {
-      if((i*2)+1 >pq->size && (i*2)+2 > pq->size)
+      //caso 1
+      if(pq->heapArray[(i*2)+1].data == NULL && pq->heapArray[(i*2)+2].data == NULL)
       {
         break;
       }
+
+      //caso 2
+      if(pq->heapArray[(i*2)+1].data != NULL && pq->heapArray[(i*2)+2].data == NULL)
+      {
+        if(pq->heapArray[i].priority < pq->heapArray[(i*2)+1].priority)
+        {
+          aux = pq->heapArray[i];
+          pq->heapArray[i] = pq->heapArray[(i*2)+1];
+          pq->heapArray[(i*2)+1] = aux;
+          i = (i*2)+1;
+          continue;
+        }
+      }
+      else if(pq->heapArray[(i*2)+1].data == NULL && pq->heapArray[(i*2)+2].data != NULL)
+      {
+        if(pq->heapArray[i].priority < pq->heapArray[(i*2)+2].priority)
+        {
+          aux = pq->heapArray[i];
+          pq->heapArray[i] = pq->heapArray[(i*2)+2];
+          pq->heapArray[(i*2)+2] = aux;
+          i = (i*2)+2;
+          continue;
+        }
+      }
+
+      //caso 3
+      if(pq->heapArray[(i*2)+1].data != NULL && pq->heapArray[(i*2)+2].data != NULL)
+      {
+        if(pq->heapArray[i].priority > pq->heapArray[(i*2)+1].priority && pq->heapArray[i].priority > pq->heapArray[(i*2)+2])
+        {
+          break;
+        }
+        else if(pq->heapArray[i].priority < pq->heapArray[(i*2)+1].priority && pq->heapArray[i].priority > pq->heapArray[(i*2)+2].priority)
+        {
+          aux = pq->heapArray[i];
+          pq->heapArray[i] = pq->heapArray[(i*2)+1];
+          pq->heapArray[(i*2)+1] = aux;
+          i = (i*2)+1;
+          continue;
+        }
+        else if(pq->heapArray[i].priority > pq->heapArray[(i*2)+1].priority && pq->heapArray[i].priority < pq->heapArray[(i*2)+2].priority)
+        {
+          aux = pq->heapArray[i];
+          pq->heapArray[i] = pq->heapArray[(i*2)+2];
+          pq->heapArray[(i*2)+2] = aux;
+          i = (i*2)+2;
+          continue;
+        }
+        else if (pq->heapArray[i].priority < pq->heapArray[(i*2)+1].priority && pq->heapArray[i].priority < pq->heapArray[(i*2)+2].priority)
+        {
+          if(pq->heapArray[(i*2)+1].priority > pq->heapArray[(i*2)+2].priority)
+          {
+            aux = pq->heapArray[i];
+            pq->heapArray[i] = pq->heapArray[(i*2)+1];
+            pq->heapArray[(i*2)+1] = aux;
+            i = (i*2)+1;
+            continue;
+          }
+          else
+          {
+            aux = pq->heapArray[i];
+            pq->heapArray[i] = pq->heapArray[(i*2)+2];
+            pq->heapArray[(i*2)+2] = aux;
+            i = (i*2)+2;
+            continue;
+          }
+        }
+      }
     }
+  
 
 }
 
