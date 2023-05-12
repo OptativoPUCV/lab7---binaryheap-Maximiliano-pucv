@@ -70,7 +70,6 @@ void heap_pop(Heap* pq){
           pq->heapArray[i] = pq->heapArray[(i*2)+1];
           pq->heapArray[(i*2)+1] = aux;
           i = (i*2)+1;
-          continue;
         }
       }
       else if(pq->heapArray[(i*2)+1].data == NULL && pq->heapArray[(i*2)+2].data != NULL)
@@ -81,7 +80,6 @@ void heap_pop(Heap* pq){
           pq->heapArray[i] = pq->heapArray[(i*2)+2];
           pq->heapArray[(i*2)+2] = aux;
           i = (i*2)+2;
-          continue;
         }
       }
 
@@ -98,7 +96,6 @@ void heap_pop(Heap* pq){
           pq->heapArray[i] = pq->heapArray[(i*2)+1];
           pq->heapArray[(i*2)+1] = aux;
           i = (i*2)+1;
-          continue;
         }
         else if(pq->heapArray[i].priority > pq->heapArray[(i*2)+1].priority && pq->heapArray[i].priority < pq->heapArray[(i*2)+2].priority)
         {
@@ -106,7 +103,6 @@ void heap_pop(Heap* pq){
           pq->heapArray[i] = pq->heapArray[(i*2)+2];
           pq->heapArray[(i*2)+2] = aux;
           i = (i*2)+2;
-          continue;
         }
         else if (pq->heapArray[i].priority < pq->heapArray[(i*2)+1].priority && pq->heapArray[i].priority < pq->heapArray[(i*2)+2].priority)
         {
@@ -116,7 +112,6 @@ void heap_pop(Heap* pq){
             pq->heapArray[i] = pq->heapArray[(i*2)+1];
             pq->heapArray[(i*2)+1] = aux;
             i = (i*2)+1;
-            continue;
           }
           else
           {
@@ -124,7 +119,6 @@ void heap_pop(Heap* pq){
             pq->heapArray[i] = pq->heapArray[(i*2)+2];
             pq->heapArray[(i*2)+2] = aux;
             i = (i*2)+2;
-            continue;
           }
         }
       }
