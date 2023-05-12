@@ -88,7 +88,7 @@ void heap_pop(Heap* pq){
       //caso 3
       if(pq->heapArray[(i*2)+1].data != NULL && pq->heapArray[(i*2)+2].data != NULL)
       {
-        if(pq->heapArray[i].priority > pq->heapArray[(i*2)+1].priority && pq->heapArray[i].priority > pq->heapArray[(i*2)+2])
+        if(pq->heapArray[i].priority > pq->heapArray[(i*2)+1].priority && pq->heapArray[i].priority > pq->heapArray[(i*2)+2].priority)
         {
           break;
         }

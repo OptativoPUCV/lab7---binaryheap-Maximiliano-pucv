@@ -192,3 +192,9 @@ heap.c:91:101: error: invalid operands to binary > (have ‘int’ and ‘heapEl
       |                                                                                           int                      heapElem {aka struct nodo}
 Compilation failed
 1bee1c2
+Fri 12 May 2023 03:22:55 PM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  7|1
+total_score: 45/70
+91b491b
